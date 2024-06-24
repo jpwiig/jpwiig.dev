@@ -13,43 +13,43 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BlazorApp1
 build_property.RootNamespace = BlazorApp1
-build_property.ProjectDir = C:\Users\jpwii\RiderProjects\BlazorApp1\WebsitePersonal\
+build_property.ProjectDir = /home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\jpwii\RiderProjects\BlazorApp1\WebsitePersonal
+build_property.MSBuildProjectDirectory = /home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/App.razor]
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/Pages/Cv.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3YucmF6b3I=
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Pages/Cv.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3YucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/Pages/CyberSec.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3liZXJTZWMucmF6b3I=
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Pages/CyberSec.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3liZXJTZWMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/Pages/WhoAmi.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2hvQW1pLnJhem9y
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Pages/WhoAmi.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvV2hvQW1pLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/_Imports.razor]
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-qtvdikthsv
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-16uqdfcfgc
 
-[C:/Users/jpwii/RiderProjects/BlazorApp1/WebsitePersonal/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-i8wyr7b720
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-t929o5jg4t

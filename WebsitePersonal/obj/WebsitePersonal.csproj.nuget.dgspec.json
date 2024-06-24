@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jpwii\\RiderProjects\\BlazorApp1\\WebsitePersonal\\WebsitePersonal.csproj": {}
+    "/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/WebsitePersonal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jpwii\\RiderProjects\\BlazorApp1\\WebsitePersonal\\WebsitePersonal.csproj": {
+    "/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/WebsitePersonal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jpwii\\RiderProjects\\BlazorApp1\\WebsitePersonal\\WebsitePersonal.csproj",
+        "projectUniqueName": "/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/WebsitePersonal.csproj",
         "projectName": "WebsitePersonal",
-        "projectPath": "C:\\Users\\jpwii\\RiderProjects\\BlazorApp1\\WebsitePersonal\\WebsitePersonal.csproj",
-        "packagesPath": "C:\\Users\\jpwii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jpwii\\RiderProjects\\BlazorApp1\\WebsitePersonal\\obj\\",
+        "projectPath": "/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/WebsitePersonal.csproj",
+        "packagesPath": "/home/jpwiig/.nuget/packages/",
+        "outputPath": "/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jpwii\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/jpwiig/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/jpwiig/.dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
