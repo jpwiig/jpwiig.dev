@@ -38,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Pages/TechnogiesBehindThis.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGVjaG5vZ2llc0JlaGluZFRoaXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/Pages/WhoAmi.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvV2hvQW1pLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
