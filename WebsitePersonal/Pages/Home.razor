@@ -6,26 +6,30 @@
 
 <MudGrid Spacing="2">
     <MudItem xs="12">
-    <MudPaper>
-        <h1>Hello, Code world!</h1>
-        <h2>Welcome to jpwiig.dev!</h2>
-        <MudText>
-            This is my personal home page i made as a side project as my own personal corner of the internet
-        </MudText>
-    </MudPaper>
+        <MudPaper Class="d-flex align-center">
+            <MudText Typo="Typo.h1">Hello, Code world!</MudText>
+            
+            <MudText Typo="Typo.h2">Welcome to jpwiig.dev!</MudText>
+            <MudText>
+                This is my personal home page i made as a side project as my own personal corner of the internet
+            </MudText>
+        </MudPaper>
     </MudItem>
-    <MudPaper Width="400px">
-        <MudText>On this site there is</MudText>
-        <MudList Clickable="true">
-            <MudListItem>A little CV</MudListItem>
-            <MudListItem>A lot of cyber security and other technology stuff</MudListItem>
-            <MudListItem>Personal work</MudListItem>
-            <MudListItem>Some cool implemtentations of API's?</MudListItem>
-            <MudListItem>A blog where i can complain about things that are and are not important</MudListItem>
-            <MudListItem>Me showing off cool things that i build as this website as a base</MudListItem>
-        </MudList>
-    </MudPaper>
-    <MudPaper Width="300px">
+    <MudItem xs="6">
+        <MudPaper Width="400px" Class="d-flex align-center">
+            <MudText>On this site there is</MudText>
+            <MudList Clickable="true">
+                <MudListItem>A little CV</MudListItem>
+                <MudListItem>A lot of cyber security and other technology stuff</MudListItem>
+                <MudListItem>Personal work</MudListItem>
+                <MudListItem>Some cool implemtentations of API's?</MudListItem>
+                <MudListItem>A blog where i can complain about things that are and are not important</MudListItem>
+                <MudListItem>Me showing off cool things that i build as this website as a base</MudListItem>
+            </MudList>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="6">
+    <MudPaper Width="300px" Class="d-flex align-center">
 
         <!--Todo: MudTimeLine-->
         <MudText Typo="Typo.subtitle1">A timeline of this website</MudText>
@@ -48,5 +52,6 @@
             </MudTimelineItem>
         </MudTimeline>
     </MudPaper>
-</MudGrid>
+    </MudItem>
+    </MudGrid>
 <p>This website is built with Web Assembly and blazor pages with some fancy C# and mudblazor, a page with technologies will be added in the future</p>
