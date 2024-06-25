@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "5Kya+cCNtrT+OR8Ae5CpGR/+RkyO25mj4P04yvNDxrMwxwc862qUZv3DYvhF1I896nW4kTY+bvUhGLaKo5/maw==",
+  "dgSpecHash": "eUTN6rBqE555u/Ldhx+QaPSgnSgkPL8bdOy9RVz6O1G9dzqdRRpDk8/ygqIZ/tzUXl/awtvrfEyNHIDfIs4tTQ==",
   "success": true,
   "projectFilePath": "/home/jpwiig/RiderProjects/PersonalWebsiteWEBASM/WebsitePersonal/WebsitePersonal.csproj",
   "expectedPackageFiles": [
-    "/home/jpwiig/.nuget/packages/bootstrap/5.3.3/bootstrap.5.3.3.nupkg.sha512",
     "/home/jpwiig/.nuget/packages/microsoft.aspnetcore.authorization/8.0.6/microsoft.aspnetcore.authorization.8.0.6.nupkg.sha512",
     "/home/jpwiig/.nuget/packages/microsoft.aspnetcore.components/8.0.6/microsoft.aspnetcore.components.8.0.6.nupkg.sha512",
     "/home/jpwiig/.nuget/packages/microsoft.aspnetcore.components.analyzers/8.0.6/microsoft.aspnetcore.components.analyzers.8.0.6.nupkg.sha512",
