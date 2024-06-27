@@ -1,6 +1,31 @@
 ﻿@page "/whoami"
-<h3>$ WhoAmi</h3>
+<h3>$ whoami</h3>
 
-@code {
+<MudGrid Justify="Justify.FlexStart" Spacing="2">
+    <MudItem xs="6">
+        <!-- epic qoute!--> 
+        <MudPaper>
+            <MudText Typo="Typo.h4">A place a little south, and some west of Oslo</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="6">
+        <!-- a image of me !-->
+        <MudImage Src="/pictures/profilproff-cropped.jpeg" Alt="Picture of me during standing by a poster" Class="rounded-lg" Width="400" />
+        
+    </MudItem>
+    <MudItem>
+        <!-- quick info about me !-->
+     
+    </MudItem>
+    <MudItem>
+        <!-- what i want to do !-->
+    </MudItem>
+    <MudItem>
+        <!-- Ways to reach out!-->
+    </MudItem>
     
+</MudGrid>
+@code {
+    //todo: whoami animation, terminal inspired
+    //todo Maps and shit
 }

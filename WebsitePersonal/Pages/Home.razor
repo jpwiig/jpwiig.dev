@@ -3,19 +3,19 @@
 <PageTitle>Home</PageTitle>
 
 
-
-<MudGrid Spacing="1">
+<MudGrid Justify="Justify.Center" Class="pt-2" Spacing="2">
     <MudItem xs="12" sm="10" lg="10">
-        <MudPaper Class="d-flex align-center">
-            <MudText Typo="Typo.h1">Hello, Code world!</MudText>
-            <MudText Typo="Typo.h2">Welcome to jpwiig.dev!</MudText>
+        <MudPaper Class="d-flex justify-center">
+            <MudText Typo="Typo.h1">Welcome to jpwiig.dev!</MudText>
+        </MudPaper>
+        <MudPaper>
             <MudText>
-                This is my personal home page i made as a side project as my own personal corner of the internet
+                This is my personal home page i made as a side project as my own personal corner of the internet. I am a CS student from Norway who likes to work with many different kinds of projects. Most of them are within information technology space. This website is used to learn some new epic tech, as well as some old tech that i allready have some experience with. To get to know me better, please enter the <a href="/whoami">whoami</a> page
             </MudText>
         </MudPaper>
     </MudItem>
-    <MudItem xs="5" sm="5" lg="5">
-        <MudPaper Class="d-flex align-center">
+    <MudItem xs="6" sm="5" lg="5">
+        <MudPaper Class="align-center">
             <MudText>On this site there is</MudText>
             <MudList Clickable="true">
                 <MudListItem>A little CV</MudListItem>
@@ -27,29 +27,33 @@
             </MudList>
         </MudPaper>
     </MudItem>
-    <MudItem xs="5" sm="5" lg="5">
-    <MudPaper Class="d-flex align-center">
-        <!--Todo: MudTimeLine-->
-        <MudText Typo="Typo.subtitle1">A timeline of this website</MudText>
-        <MudSpacer/>
-        <MudTimeline>
+    <MudItem xs="6" sm="5" lg="5">
+        <MudPaper Class="d-flex align-center">
+            <!--Todo: MudTimeLine-->
+            <MudText Typo="Typo.subtitle1">A timeline of this website</MudText>
+            <MudSpacer/>
+            <MudTimeline>
 
-            <MudTimelineItem>
-                <MudText>Hello World</MudText>
-            </MudTimelineItem>
-            <MudTimelineItem>
-                <MudText>Figure out where things go</MudText>
-            </MudTimelineItem>
-            <MudTimelineItem>
-                <MudText>Build & deploy</MudText>
-            </MudTimelineItem>
-            <MudTimelineItem>
-                <MudText>
-                    Publish on my own domain
-                </MudText>
-            </MudTimelineItem>
-        </MudTimeline>
-    </MudPaper>
+                <MudTimelineItem>
+                    <MudText>Hello World</MudText>
+                </MudTimelineItem>
+                <MudTimelineItem>
+                    <MudText>Figure out where things go</MudText>
+                </MudTimelineItem>
+                <MudTimelineItem>
+                    <MudText>Build & deploy</MudText>
+                </MudTimelineItem>
+                <MudTimelineItem>
+                    <MudText>
+                        Publish on my own domain
+                    </MudText>
+                </MudTimelineItem>
+            </MudTimeline>
+        </MudPaper>
     </MudItem>
-    </MudGrid>
-<p>This website is built with Web Assembly and blazor pages with some fancy C# and mudblazor, a page with technologies will be added in the future</p>
+    <MudItem xs="12" sm="10">
+        <MudPaper>
+            <MudText>This website is built with Web Assembly and blazor pages with some fancy C# and mudblazor, a page with technologies will be added in the future</MudText>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
