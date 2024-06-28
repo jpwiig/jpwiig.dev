@@ -5,6 +5,21 @@ html, body {
 a, .btn-link {
     color: #006bb7;
 }
+@keyframes typing {
+    from {max-width: 0}
+    to {max-width: 100%}
+}
+@keyframes blinking {
+    from, to {border-color: transparent}
+    50% {border-color: black}
+    
+}
+.intro{
+    border-right: .15em solid black;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 30s steps(30, end), blinking .5s step-end infinite;
+}
 
 .btn-primary {
     color: #fff;
