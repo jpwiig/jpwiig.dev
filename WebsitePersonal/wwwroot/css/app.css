@@ -5,6 +5,8 @@ html, body {
 a, .btn-link {
     color: #006bb7;
 }
+
+/*Animations for the typewriteeffent*/
 @keyframes typing {
     from {max-width: 0}
     to {max-width: 100%}
