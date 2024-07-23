@@ -9,6 +9,7 @@
   </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.64.0" />
         <PackageReference Include="Kinde.SDK" Version="1.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.6" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.6" PrivateAssets="all" />
@@ -17,6 +18,26 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="models\DTO\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="gen_bak\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="gen_bak\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="gen_bak\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="gen_bak\**" />
     </ItemGroup>
 
 </Project>
