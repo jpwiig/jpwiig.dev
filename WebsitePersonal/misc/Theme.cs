@@ -10,13 +10,20 @@ public class Theme
     {
         return myTheme = new MudTheme()
         {
+            Palette = new PaletteLight()
+            {
+                Background = Colors.Blue.Default
+            },
             Typography = new Typography()
             {
                 Default = new Default()
                 {
-                    FontFamily = new []{"MS Comic Sans", "Sans Serif"}
+                    FontFamily = new[]
+                    {
+                      "Poppins", "Sans Serif"
+                    }
                 }
             }
-        }; 
+        };
     }
 }
