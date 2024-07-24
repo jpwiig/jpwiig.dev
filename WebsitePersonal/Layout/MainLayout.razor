@@ -1,6 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Runtime.ExceptionServices
+@inherits LayoutComponentBase
 
-<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme"/>
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="TheTheme"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 <MudLayout>
@@ -18,4 +19,8 @@
     private bool _isDarkMode;
     private MudTheme _theme = new (); 
 
+    
+    //Mudtheme
+    static Theme theme = new Theme(); 
+    MudTheme TheTheme = theme.getTheme(); 
 }
