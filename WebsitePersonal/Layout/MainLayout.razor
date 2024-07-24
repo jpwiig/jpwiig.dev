@@ -1,10 +1,21 @@
 ﻿@inherits LayoutComponentBase
-<MudThemeProvider/>
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 <MudLayout>
-    <AppBar/>
+    <AppBar/> 
+   
     <MudMainContent>
+        <MudSwitch @bind-Value="_isDarkMode" Color="Color.Inherit" Class="pa-5" T="bool" Label="Toggle the dark/light" ThumbIcon="@Icons.Material.Outlined.DarkMode"/>
         @Body
     </MudMainContent>
 </MudLayout>
+
+@code
+{
+    //todo abstract this shit
+    private bool _isDarkMode;
+    private MudTheme _theme = new (); 
+
+}
