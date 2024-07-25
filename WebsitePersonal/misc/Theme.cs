@@ -4,15 +4,17 @@ namespace BlazorApp1;
 
 public class Theme
 {
-    private MudTheme myTheme { get; set; }
+    private MudTheme? myTheme { get; set; }
 
     public MudTheme getTheme()
     {
         return myTheme = new MudTheme()
         {
-            Palette = new PaletteLight()
+            
+            PaletteLight = new PaletteLight()
             {
-                Background = Colors.Blue.Default
+                Primary = "#3D4552",
+                Background = "#FFFFFF"
             },
             Typography = new Typography()
             {
@@ -21,7 +23,8 @@ public class Theme
                     FontFamily = new[]
                     {
                       "Poppins", "Sans Serif"
-                    }
+                    },
+                    
                 }
             }
         };

@@ -2,9 +2,9 @@ namespace BlazorApp1.models.gen;
 
 public class Items1
 {
-    public string type { get; set; }
+    public string? type { get; set; }
 
-    public enum types
+    public enum Types
     {
     } //is this enum??
 }
