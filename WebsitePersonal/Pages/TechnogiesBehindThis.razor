@@ -1,8 +1,8 @@
 @page "/technologiesbehind"
-<MudPaper>
-<MudText Typo="Typo.h1"></MudText>
+<MudPaper Elevation="0" Square="true">
+    <MudText Typo="Typo.h1"> A world without insight is a world without fun</MudText>
 </MudPaper>
-<MudPaper>
+<MudPaper Elevation="0" Square="true">
     <MudText Typo="Typo.h2">
         Why blazor and web assembly?
     </MudText>
@@ -13,13 +13,22 @@
     <MudText Typo="Typo.h2">
         The nerdy things
     </MudText>
+    <MudText>
+        One of the biggest drawback of web assembly is that is very slow, so i will continously try to optimize this website as i see fit, under you can see what i have done: 
+    </MudText>
+    <MudList T="string">
+        <MudListItem>Removed CDN where possible</MudListItem>
+        <MudListItem>Trying to remove unused CSS where possible (as removing entire libaries that are not in use)</MudListItem>
+        <MudListItem>Optimize Items</MudListItem>
+    </MudList>
+    <MudText>As of most places have ok - connection, then mostly for the user experience, and it is actually kinda fun</MudText>
 </MudPaper>
-<MudPaper><MudText Typo="Typo.h2">
+<MudPaper Elevation="0" Square="true"><MudText Typo="Typo.h2">
     Deploying in many ways. 
-</MudText></MudPaper>
-<MudPaper>
-    <MudText Typo="Typo.h2">It is always dns, if it is not dns, it is dns</MudText>
+</MudText>
+<MudText>As webassembly compiles to a static website in this context, i could have used many differents ways to deploy the initial static website, so i decided to use Cloudflare pages, but as long as it can use a build script i should be good! But i like to have things in one place</MudText>
 </MudPaper>
+
 <MudAlert Severity="Severity.Info">
     If you see anything on this site, please open a Issue in the <a href="https://github.com/jpwiig/jpwiig.dev/issues"><u>github repository</u></a>, and will take a look as fast as i can!
 </MudAlert>

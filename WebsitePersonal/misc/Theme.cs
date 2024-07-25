@@ -14,7 +14,16 @@ public class Theme
             PaletteLight = new PaletteLight()
             {
                 Primary = "#3D4552",
-                Background = "#FFFFFF"
+                Secondary = "#3A3B3C",
+                Tertiary = "#222B33",
+                Background = "#FFFFFF",
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = "#3D4552",
+                Secondary = "#3A3B3C",
+                Tertiary = "#222B33",
+               // Background = "#172125",
             },
             Typography = new Typography()
             {
