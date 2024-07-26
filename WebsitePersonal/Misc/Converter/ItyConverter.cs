@@ -49,5 +49,5 @@ public class ItyConverter : JsonConverter
         throw new Exception("Cannot marshal type Ity");
     }
 
-    public static readonly ItyConverter Singelton = new ItyConverter(); 
+    public static readonly ItyConverter Singleton = new ItyConverter(); 
 }

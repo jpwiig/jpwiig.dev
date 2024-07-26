@@ -4,6 +4,6 @@ public enum Tag
 {
     Patch,
     ThirdPartyAdvisory,
-    UsGovermentResource,
+    UsGovernmentResource,
     VendorAdvisory
 }
