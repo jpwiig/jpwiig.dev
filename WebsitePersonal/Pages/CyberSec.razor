@@ -1,4 +1,6 @@
 ﻿@page "/cybersec"
+@using System.Collections
+@using System.Reflection.Metadata
 @using System.Text.Json
 @using BlazorApp1.models.DTO
 @using BlazorApp1.models.gen
@@ -15,15 +17,22 @@ security is such cool
 <MudPaper Elevation="0" Square="true">
     <MudText>CVE severity </MudText>
     <MudAlert Severity="Severity.Info">Please note: i am working on my own CVE search, and i as i have not figured it quite out right now, you will se a error, this due to a gigantic object that i hope to fix soon!</MudAlert>
-    @if (err)
+    @if (err || vuln is null)
     {
         <MudAlert Severity="Severity.Error"> error loading the external API, please let the creator know</MudAlert>
     }
     else
     {
-        @foreach (var feed in arr)
+        @if (load)
         {
-            <p>@feed.Cve.Id</p>
+            @foreach (var feed in vuln)
+            {
+                <p>@feed.Cve.Id</p>
+            }
+        }
+        else
+        {
+            <p>hallo på do</p>
         }
     }
   
@@ -34,7 +43,9 @@ security is such cool
     //add api calls to this 
     public CVEdto? cve = new CVEdto();
     public Vulnerabilities[] arr = [];
-    bool err = false; 
+    public IEnumerable<Vulnerabilities> vuln = [];
+    bool err = false;
+    bool load = false; 
     protected override async Task OnInitializedAsync()
     {
         var req = new HttpRequestMessage(HttpMethod.Get, "https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25");
@@ -43,12 +54,13 @@ security is such cool
         var res = await client.SendAsync(req);
         if (res.IsSuccessStatusCode)
         {
-            
+    
             var responseStream = await res.Content.ReadAsStreamAsync(); 
             cve = await JsonSerializer.DeserializeAsync<CVEdto>(responseStream);
             Console.WriteLine(responseStream);
-            Console.WriteLine($"OK babaush {cve.Vulnarbilities}");
-            arr = cve.Vulnarbilities;
+            Console.WriteLine($"OK babaush {cve}");
+            vuln = cve.Vulnarbilities.ToList().AsEnumerable();
+            load = true; 
         }
         else
         {
