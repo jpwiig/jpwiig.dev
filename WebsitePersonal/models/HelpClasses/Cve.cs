@@ -19,5 +19,16 @@ public VulnStatus vulnStatus { get; set;  }
 [JsonProperty ("cveTags")]
 public object[] CveTags { get; set; }
 
+[JsonProperty ("descriptions")]
+public Description[] Descriptions { get; set; }
+
+[JsonProperty ("metricts")]
+public Metrics Metrics { get; set; }
+
+[JsonProperty ("configuration")]
+public Configuration[] Configurations { get; set; } //todo: change this
+
+[JsonProperty("reference")]
+public Reference[] References { get; set; }
 
 }

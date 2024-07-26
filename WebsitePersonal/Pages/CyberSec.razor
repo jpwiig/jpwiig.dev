@@ -1,6 +1,8 @@
 ﻿@page "/cybersec"
 @using System.Text.Json
 @using BlazorApp1.models.DTO
+@using BlazorApp1.models.gen
+@using MudBlazor.Extensions
 @using Newtonsoft.Json.Linq
 @inject IHttpClientFactory ClientFactory
 
@@ -17,14 +19,11 @@ security is such cool
     {
         <MudAlert Severity="Severity.Error"> error loading the external API, please let the creator know</MudAlert>
     }
-    else if (cveTest == null)
+    else
     {
-        <MudProgressCircular>loading...</MudProgressCircular>
-    } else
-    {
-        @foreach (var cv in cveTest)
+        @foreach (var feed in arr)
         {
-            <MudText>cv</MudText>
+            <p>@feed.Cve.Id</p>
         }
     }
   
@@ -33,7 +32,8 @@ security is such cool
 @code {
 
     //add api calls to this 
-    private IEnumerable<List<CVEdto>>? cveTest = [];
+    public CVEdto? cve = new CVEdto();
+    public Vulnerabilities[] arr = [];
     bool err = false; 
     protected override async Task OnInitializedAsync()
     {
@@ -43,9 +43,12 @@ security is such cool
         var res = await client.SendAsync(req);
         if (res.IsSuccessStatusCode)
         {
-           // Console.WriteLine("OK babaush");
+            
             var responseStream = await res.Content.ReadAsStreamAsync(); 
-            cveTest = await JsonSerializer.DeserializeAsync<IEnumerable<List<CVEdto>>>(responseStream);
+            cve = await JsonSerializer.DeserializeAsync<CVEdto>(responseStream);
+            Console.WriteLine(responseStream);
+            Console.WriteLine($"OK babaush {cve.Vulnarbilities}");
+            arr = cve.Vulnarbilities;
         }
         else
         {

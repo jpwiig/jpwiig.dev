@@ -1,8 +1,9 @@
+using Newtonsoft.Json;
+
 namespace BlazorApp1.models.gen;
 
-public class Metrics
+public partial class Metrics
 {
-    public string? description { get; set; }
-    public string? type { get; set; }
-    public Properties4? properties { get; set; }
+    [JsonProperty("cvssMetricV2")]
+    public CvssMetricV2[] CvssMetricV2 { get; set; }
 }

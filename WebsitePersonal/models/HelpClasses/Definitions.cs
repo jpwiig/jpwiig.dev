@@ -13,7 +13,7 @@ public class Definitions
     public Reference? reference { get; set; }
     public VendorComment? vendorComment { get; set; }
     public Weakness? weakness { get; set; }
-    public Config? config { get; set; }
+    public Configuration? config { get; set; }
     public Node? node { get; set; }
     public Cpe_match? cpe_match { get; set; }
     public Def_subscore? def_subscore { get; set; }
