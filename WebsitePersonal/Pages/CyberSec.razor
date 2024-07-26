@@ -23,17 +23,12 @@ security is such cool
     }
     else
     {
-        @if (load)
-        {
-            @foreach (var feed in vuln)
+            @foreach (var feed in cve.Vulnarbilities.ToList())
             {
-                <p>@feed.Cve.Id</p>
+                @feed.Cve
             }
-        }
-        else
-        {
-            <p>hallo på do</p>
-        }
+        
+
     }
   
 </MudPaper>
@@ -43,7 +38,7 @@ security is such cool
     //add api calls to this 
     public CVEdto? cve = new CVEdto();
     public Vulnerabilities[] arr = [];
-    public IEnumerable<Vulnerabilities> vuln = [];
+    public List<Vulnerabilities> vuln = [];
     bool err = false;
     bool load = false; 
     protected override async Task OnInitializedAsync()
@@ -59,7 +54,6 @@ security is such cool
             cve = await JsonSerializer.DeserializeAsync<CVEdto>(responseStream);
             Console.WriteLine(responseStream);
             Console.WriteLine($"OK babaush {cve}");
-            vuln = cve.Vulnarbilities.ToList().AsEnumerable();
             load = true; 
         }
         else
