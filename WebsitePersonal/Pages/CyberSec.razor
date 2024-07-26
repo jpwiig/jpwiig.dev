@@ -1,5 +1,6 @@
 ﻿@page "/cybersec"
 @using System.Text.Json
+@using BlazorApp1.models.DTO
 @using Newtonsoft.Json.Linq
 @inject IHttpClientFactory ClientFactory
 
@@ -32,11 +33,11 @@ security is such cool
 @code {
 
     //add api calls to this 
-    private IEnumerable<Dictionary<String, object>>? cveTest = [];
+    private IEnumerable<List<CVEdto>>? cveTest = [];
     bool err = false; 
     protected override async Task OnInitializedAsync()
     {
-        var req = new HttpRequestMessage(HttpMethod.Get, "https://services.nvd.nist.gov/rest/json/cves/2.0");
+        var req = new HttpRequestMessage(HttpMethod.Get, "https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25");
         req.Headers.Add("Accept", "application/json");
         var client = ClientFactory.CreateClient();
         var res = await client.SendAsync(req);
@@ -44,7 +45,7 @@ security is such cool
         {
            // Console.WriteLine("OK babaush");
             var responseStream = await res.Content.ReadAsStreamAsync(); 
-            cveTest = await JsonSerializer.DeserializeAsync<IEnumerable<Dictionary<String, object>>>(responseStream);
+            cveTest = await JsonSerializer.DeserializeAsync<IEnumerable<List<CVEdto>>>(responseStream);
         }
         else
         {
