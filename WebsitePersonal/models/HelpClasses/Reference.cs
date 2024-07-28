@@ -9,7 +9,7 @@ public partial class Reference
     public Uri Url { get; set; }
 
     [JsonProperty("source")]
-    public SourceIdentifierEnum Source { get; set; }
+    public string Source { get; set; }
 
     [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
     public Tag[] Tags { get; set; }

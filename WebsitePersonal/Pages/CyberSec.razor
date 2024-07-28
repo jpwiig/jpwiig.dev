@@ -6,6 +6,8 @@
 @using BlazorApp1.models.gen
 @using MudBlazor.Extensions
 @using Newtonsoft.Json.Linq
+@using QuickType
+@using Cve = BlazorApp1.models.gen.Cve
 @inject IHttpClientFactory ClientFactory
 
 <body>
@@ -17,28 +19,34 @@ security is such cool
 <MudPaper Elevation="0" Square="true">
     <MudText>CVE severity </MudText>
     <MudAlert Severity="Severity.Info">Please note: i am working on my own CVE search, and i as i have not figured it quite out right now, you will se a error, this due to a gigantic object that i hope to fix soon!</MudAlert>
+    <p>@cve.Timestamp</p>
     @if (err || vuln is null)
     {
         <MudAlert Severity="Severity.Error"> error loading the external API, please let the creator know</MudAlert>
     }
     else
     {
-            @foreach (var feed in cve.Vulnarbilities.ToList())
+        <MudList T="Cve">
+            @foreach (var feed in vuln)
             {
-                @feed.Cve
+                
+                <MudListItem><MudPaper>
+                    <MudText>@feed.Cve.Id</MudText>
+                    <MudText>@feed.Cve.Published</MudText>
+                    <MudText>@feed.Cve.SourceIdentifier</MudText>
+                    <MudText>@feed.Cve.Descriptions.First().Value</MudText>
+                </MudPaper></MudListItem>
             }
-        
+        </MudList>
 
     }
-  
 </MudPaper>
 
 @code {
 
     //add api calls to this 
-    public CVEdto? cve = new CVEdto();
-    public Vulnerabilities[] arr = [];
-    public List<Vulnerabilities> vuln = [];
+    public JsonSchema? cve = new JsonSchema();
+    public List<Vulnerability> vuln = [];
     bool err = false;
     bool load = false; 
     protected override async Task OnInitializedAsync()
@@ -50,16 +58,30 @@ security is such cool
         if (res.IsSuccessStatusCode)
         {
     
-            var responseStream = await res.Content.ReadAsStreamAsync(); 
-            cve = await JsonSerializer.DeserializeAsync<CVEdto>(responseStream);
+            var responseStream = await res.Content.ReadAsStreamAsync();
+            var json = await res.Content.ReadFromJsonAsync<JsonSchema>();
+            cve = json; 
             Console.WriteLine(responseStream);
-            Console.WriteLine($"OK babaush {cve}");
-            load = true; 
+            Console.WriteLine(cve.Timestamp.ToString());
+            Console.WriteLine(cve.Vulnerabilities.ToString());
+            Console.WriteLine($"OK babaush {cve.Vulnerabilities}");
+            if( cve.Vulnerabilities != null)
+            {
+                vuln = cve.Vulnerabilities.ToList();
+                vuln.ForEach(o => System.Console.WriteLine(o.ToString())); //wtf is worng with source
+                load = true;
+            }
+            else
+            {
+                Console.WriteLine("the list i empty");
+                vuln = new List<Vulnerability>();
+            }
         }
         else
         {
             err = true;
         }
+
     }
 
 }

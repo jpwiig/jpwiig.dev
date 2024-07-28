@@ -8,7 +8,7 @@ public class Cve
 [JsonProperty ("id")]
 public string? Id { get; set; }
 [JsonProperty ("sourceIdentifier")]
-public SourceIdentifierEnum SourceIdentifier { get; set;  }
+public string sourceIdentifier{ get; set;  }
 
 [JsonProperty("published")] 
 public DateTimeOffset LastModified { get; set; }
@@ -17,18 +17,21 @@ public DateTimeOffset LastModified { get; set; }
 public VulnStatus vulnStatus { get; set;  }
 
 [JsonProperty ("cveTags")]
-public object[] CveTags { get; set; }
+public IEnumerable<Object> CveTags { get; set; }
 
 [JsonProperty ("descriptions")]
-public Description[] Descriptions { get; set; }
+public IEnumerable<Description> Descriptions { get; set; }
 
 [JsonProperty ("metricts")]
 public Metrics Metrics { get; set; }
 
-[JsonProperty ("configuration")]
-public Configuration[] Configurations { get; set; } //todo: change this
+[JsonProperty("weaknesses")]
+public IEnumerable<Weakness> Weaknesses { get; set; }
 
-[JsonProperty("reference")]
-public Reference[] References { get; set; }
+[JsonProperty ("configuration")]
+public IEnumerable<Configuration> Configurations { get; set; } //todo: change this
+
+[JsonProperty("references")]
+public IEnumerable<Reference> References { get; set; }
 
 }
