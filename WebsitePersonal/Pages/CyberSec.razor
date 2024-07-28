@@ -1,5 +1,6 @@
 ﻿@page "/cybersec"
 @using System.Collections
+@using System.Globalization
 @using System.Reflection.Metadata
 @using System.Text.Json
 @using BlazorApp1.models.DTO
@@ -19,13 +20,20 @@ security is such cool
 <MudPaper Elevation="0" Square="true">
     <MudText>CVE severity </MudText>
     <MudAlert Severity="Severity.Info">Please note: i am working on my own CVE search, and i as i have not figured it quite out right now, you will se a error, this due to a gigantic object that i hope to fix soon!</MudAlert>
-    <p>@cve.Timestamp</p>
+    <MudText>@cve.Timestamp</MudText>
     @if (err || vuln is null)
     {
         <MudAlert Severity="Severity.Error"> error loading the external API, please let the creator know</MudAlert>
     }
     else
     {
+        <MudPaper>
+            <MudForm>
+                <MudTextField T="string" Label="search for item" @bind="search"/>
+                <MudSpacer/>
+            </MudForm>
+        </MudPaper>
+        <MudPaper>
         <MudList T="Cve">
             @foreach (var feed in vuln)
             {
@@ -38,7 +46,7 @@ security is such cool
                 </MudPaper></MudListItem>
             }
         </MudList>
-
+        </MudPaper>
     }
 </MudPaper>
 
@@ -48,28 +56,34 @@ security is such cool
     public JsonSchema? cve = new JsonSchema();
     public List<Vulnerability> vuln = [];
     bool err = false;
-    bool load = false; 
+    public DateTime today = DateTime.Today;
+    string search;
+
     protected override async Task OnInitializedAsync()
     {
-        var req = new HttpRequestMessage(HttpMethod.Get, "https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25");
+        string todayinAmerican = today.ToString("yyyy-MM-ddTHH:mm:ssZ");
+        var hundrethirtydays = today.Add(new TimeSpan(90, 0, 0, 0));
+        string hnrdthirtydaysagoformatted = hundrethirtydays.ToString("yyyy-MM-ddTHH:mm:ssZ");
+        Console.WriteLine(today);
+        var req = new HttpRequestMessage(HttpMethod.Get, $"https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25&pubStartDate={todayinAmerican}&pubEndDate={hnrdthirtydaysagoformatted}");
+        Console.WriteLine(req.RequestUri);
         req.Headers.Add("Accept", "application/json");
         var client = ClientFactory.CreateClient();
         var res = await client.SendAsync(req);
         if (res.IsSuccessStatusCode)
         {
-    
+
             var responseStream = await res.Content.ReadAsStreamAsync();
             var json = await res.Content.ReadFromJsonAsync<JsonSchema>();
-            cve = json; 
+            cve = json;
             Console.WriteLine(responseStream);
             Console.WriteLine(cve.Timestamp.ToString());
             Console.WriteLine(cve.Vulnerabilities.ToString());
             Console.WriteLine($"OK babaush {cve.Vulnerabilities}");
-            if( cve.Vulnerabilities != null)
+            if (cve.Vulnerabilities != null)
             {
                 vuln = cve.Vulnerabilities.ToList();
-                vuln.ForEach(o => System.Console.WriteLine(o.ToString())); //wtf is worng with source
-                load = true;
+                vuln.ForEach(o => System.Console.WriteLine(o.ToString()));
             }
             else
             {
@@ -84,5 +98,40 @@ security is such cool
 
     }
 
-}
+    public async Task Search()
+    {
+        string todayinAmerican = today.ToString("yyyy-MM-ddTHH:mm:ssZ");
+        var hundrethirtydays = today.Add(new TimeSpan(90, 0, 0, 0));
+        string hnrdthirtydaysagoformatted = hundrethirtydays.ToString("yyyy-MM-ddTHH:mm:ssZ");
+        var req = new HttpRequestMessage(HttpMethod.Get, $"https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25&pubStartDate={todayinAmerican}&pubEndDate={hnrdthirtydaysagoformatted}&keywordSearch={search}");
+        req.Headers.Add("Accept", "application/json");
+        var client = ClientFactory.CreateClient();
+        var res = await client.SendAsync(req);
+        if (res.IsSuccessStatusCode)
+        {
+
+            var responseStream = await res.Content.ReadAsStreamAsync();
+            var json = await res.Content.ReadFromJsonAsync<JsonSchema>();
+            cve = json;
+            Console.WriteLine(responseStream);
+            Console.WriteLine(cve.Timestamp.ToString());
+            Console.WriteLine(cve.Vulnerabilities.ToString());
+            Console.WriteLine($"OK babaush {cve.Vulnerabilities}");
+            if (cve.Vulnerabilities != null)
+            {
+                vuln = cve.Vulnerabilities.ToList();
+                vuln.ForEach(o => System.Console.WriteLine(o.ToString()));
+            }
+            else
+            {
+                Console.WriteLine("the list i empty");
+                vuln = new List<Vulnerability>();
+            }
+        }
+        else
+        {
+            err = true;
+        }
+    }
+
 }
