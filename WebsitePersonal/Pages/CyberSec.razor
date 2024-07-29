@@ -1,39 +1,29 @@
 ﻿@page "/cybersec"
-@using System.Collections
-@using System.Globalization
-@using System.Reflection.Metadata
-@using System.Text.Json
-@using BlazorApp1.models.DTO
-@using BlazorApp1.models.gen
-@using MudBlazor.Extensions
-@using Newtonsoft.Json.Linq
 @using QuickType
 @using Cve = BlazorApp1.models.gen.Cve
+@using BlazorApp1.Pages.Component
 @inject IHttpClientFactory ClientFactory
 
 <body>
 <h3>CyberSec</h3>
 security is such cool
-</body>
 <!-- TODO: event Timeline for CVE -->
 
 <MudPaper Elevation="0" Square="true">
     <MudText>CVE severity </MudText>
     <MudAlert Severity="Severity.Info">Please note: i am working on my own CVE search, and i as i have not figured it quite out right now, you will se a error, this due to a gigantic object that i hope to fix soon!</MudAlert>
-    <MudText>@cve.Timestamp</MudText>
+    <MudText> API LAST LOADED: @cve.Timestamp</MudText>
+    <SearchBar/>
+</MudPaper>
+<MudPaper>
     @if (err || vuln is null)
     {
         <MudAlert Severity="Severity.Error"> error loading the external API, please let the creator know</MudAlert>
     }
     else
     {
-        <MudPaper>
-            <MudForm>
-                <MudTextField T="string" Label="search for item" @bind="search"/>
-                <MudSpacer/>
-            </MudForm>
-        </MudPaper>
-        <MudPaper>
+ 
+   
         <MudList T="Cve">
             @foreach (var feed in vuln)
             {
@@ -46,10 +36,9 @@ security is such cool
                 </MudPaper></MudListItem>
             }
         </MudList>
-        </MudPaper>
     }
 </MudPaper>
-
+</body>
 @code {
 
     //add api calls to this 
