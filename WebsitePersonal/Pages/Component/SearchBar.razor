@@ -2,12 +2,65 @@
 @inject IHttpClientFactory ClientFactory
 
 <MudPaper>
-    <MudForm>
-    <MudText>Search for an item</MudText>
-    <MudTextField T="string" Label="search for item"/>
-    <MudButton Variant="Variant.Filled" Color="Color.Primary">Search</MudButton>
-    </MudForm>
+    <MudCard>
+        <MudText>Search for a spesific CVE</MudText>
+        <MudTextField @bind-Value="Item" Label="search for item"/>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick=" async () => await Search(Item) ">Search</MudButton>
+            <!--todo: filters -->
+        </MudCardActions>
+    </MudCard>
 </MudPaper>
+
 @code {
-   
+   // private CyberSec cs;
+   [Parameter] public List<Vulnerability> vuln { get; set; }
+    public string Item { get; set; }
+    //add api calls to this 
+    public JsonSchema? cve = new JsonSchema();
+    public event EventHandler? SearchChanged;
+    bool err = false;
+    public DateTime today = DateTime.Today;
+    public string timeFormat = "yyyy-MM-ddTHH:mm:ssZ"; 
+   // public async Task SearchComponent() => await cs.Search(Item);
+   public async Task Search(string search)
+   {
+       string todayinAmerican = today.ToString(timeFormat);
+       var hundrethirtydays = today.Add(new TimeSpan(90, 0, 0, 0));
+       string hnrdthirtydaysagoformatted = hundrethirtydays.ToString(timeFormat);
+       string url = $"https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25&pubStartDate={todayinAmerican}&pubEndDate={hnrdthirtydaysagoformatted}&keywordSearch={search}"; 
+       var req = new HttpRequestMessage(HttpMethod.Get, url);
+       req.Headers.Add("Accept", "application/json");
+       var client = ClientFactory.CreateClient();
+       var res = await client.SendAsync(req);
+       if (res.IsSuccessStatusCode)
+       {
+
+           var responseStream = await res.Content.ReadAsStreamAsync();
+           var json = await res.Content.ReadFromJsonAsync<JsonSchema>();
+           cve = json;
+           Console.WriteLine(responseStream);
+           Console.WriteLine(cve.Timestamp.ToString());
+           Console.WriteLine(cve.Vulnerabilities.ToString());
+           Console.WriteLine($"OK babaush {cve.Vulnerabilities}");
+           vuln.Clear();
+           if (cve.Vulnerabilities != null)
+           {
+               vuln.AddRange(cve.Vulnerabilities.ToList());
+               //vuln = cve.Vulnerabilities.ToList();
+           }
+           else
+           {
+               Console.WriteLine("the list i empty");
+               
+           }
+
+         // await InvokeAsync(() => StateHasChanged()); 
+         SearchChanged?.Invoke(this, EventArgs.Empty);
+       }
+       else
+       {
+           err = true;
+       }
+   }
 }
