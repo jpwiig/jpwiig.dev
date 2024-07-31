@@ -7,9 +7,10 @@
 <body>
 <MudText Typo="Typo.h2">Cyber security CVE Feed</MudText>
 <!-- TODO: event Timeline for CVE -->
-<MudText Typo="Typo.body1">On this site i use <abbr title="National insitute of Standard Technologies">NIST</abbr> own api to gather information about known <abbr title="Common Vulnaribilites and Exposures">CVE</abbr>. as this a api that are based in the US (and i am in EU), my goal is eventually to find another api if it exists
-More info will be added on the <a href="/technologiesbehind">behind the scenes</a> page! 
-    </MudText>
+<MudText Typo="Typo.body1">
+    On this site i use <abbr title="National insitute of Standard Technologies">NIST</abbr> own api to gather information about known <abbr title="Common Vulnaribilites and Exposures">CVE</abbr>. as this a api that are based in the US (and i am in EU), my goal is eventually to find another api if it exists
+    More info will be added on the <a href="/technologiesbehind">behind the scenes</a> page!
+</MudText>
 <MudPaper Elevation="0" Square="true">
     <MudText>CVE severity </MudText>
     <MudAlert Severity="Severity.Info">Please note: i am working on CVE search, there might be some wierd stuff here and there, but enjoy!</MudAlert>
@@ -23,23 +24,39 @@ More info will be added on the <a href="/technologiesbehind">behind the scenes</
     }
     else
     {
- 
-   
         <MudList T="Cve">
             @foreach (var feed in vuln)
             {
-                
-                <MudListItem><MudPaper>
-                    <MudText><MudText><b>Name: </b></MudText>@feed.Cve.Id</MudText>
-                    <MudText><MudText><b>Published: </b></MudText>@feed.Cve.Published</MudText>
-                    <MudText><MudText><b>Source: </b></MudText>@feed.Cve.SourceIdentifier</MudText>
-                    <MudText><MudText><b>Description: </b></MudText>@feed.Cve.Descriptions.First().Value</MudText>
-                </MudPaper></MudListItem>
+                <MudListItem>
+                    <MudPaper>
+                        <MudText>
+                            <MudText>
+                                <b>Name: </b>
+                            </MudText>@feed.Cve.Id
+                        </MudText>
+                        <MudText>
+                            <MudText>
+                                <b>Published: </b>
+                            </MudText>@feed.Cve.Published
+                        </MudText>
+                        <MudText>
+                            <MudText>
+                                <b>Source: </b>
+                            </MudText>@feed.Cve.SourceIdentifier
+                        </MudText>
+                        <MudText>
+                            <MudText>
+                                <b>Description: </b>
+                            </MudText>@feed.Cve.Descriptions.First().Value
+                        </MudText>
+                    </MudPaper>
+                </MudListItem>
             }
         </MudList>
     }
 </MudPaper>
 </body>
+
 @code {
 
     //add api calls to this 
@@ -49,12 +66,13 @@ More info will be added on the <a href="/technologiesbehind">behind the scenes</
     public DateTime today = DateTime.Today;
     public string timeFormat = "yyyy-MM-ddTHH:mm:ssZ";
     private SearchBar searchBar { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         string todayinAmerican = today.ToString(timeFormat);
         var hundrethirtydays = today.Add(new TimeSpan(120, 0, 0, 0));
         string hnrdthirtydaysagoformatted = hundrethirtydays.ToString(timeFormat);
-        string url = $"https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25&pubStartDate={todayinAmerican}&pubEndDate={hnrdthirtydaysagoformatted}"; 
+        string url = $"https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25&pubStartDate={todayinAmerican}&pubEndDate={hnrdthirtydaysagoformatted}";
         var req = new HttpRequestMessage(HttpMethod.Get, url);
         Console.WriteLine(req.RequestUri);
         //if (searchBar != null)
@@ -67,7 +85,6 @@ More info will be added on the <a href="/technologiesbehind">behind the scenes</
         var res = await client.SendAsync(req);
         if (res.IsSuccessStatusCode)
         {
-
             var responseStream = await res.Content.ReadAsStreamAsync();
             var json = await res.Content.ReadFromJsonAsync<JsonSchema>();
             cve = json;
@@ -81,26 +98,26 @@ More info will be added on the <a href="/technologiesbehind">behind the scenes</
             else
             {
                 Console.WriteLine("the list i empty");
-            }  
+            }
         }
         else
         {
             err = true; //error confirms, render a error message for the end user
         }
-
     }
 
     protected override async Task OnParametersSetAsync()
     {
         if (searchBar is not null)
         {
-            searchBar.SearchChanged += HandleSearchUpdated; 
+            searchBar.SearchChanged += HandleSearchUpdated;
         }
     }
+
     private void HandleSearchUpdated(object? sender, EventArgs e)
     {
         InvokeAsync(StateHasChanged);
     }
-   
+
 
 }
