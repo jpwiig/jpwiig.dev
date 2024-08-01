@@ -1,0 +1,20 @@
+﻿@page "/buisnessCard"
+
+<MudPaper>
+    <MudText Typo="Typo.h2">Jon Petter Wiig</MudText>
+    <MudImage src="/pictures/profilproff-cropped.jpeg"  Width="300"  Class="rounded-lg" Alt="Picture of me!"/>
+    <MudSpacer/>
+    <MudText Href="">Checkout my CV</MudText>
+    <MudText Typo="Typo.inherit">You can find me at: </MudText>
+    <MudList T="string">
+        <MudListItem Href="https://www.linkedin.com/in/jonpetterwiig/" Target="_blank"><MudIcon Icon="@Icons.Custom.Brands.LinkedIn"/>LinkedIn</MudListItem>
+        <MudListItem Href="https://www.instagram.com/jpwiig/" Target="_blank"><MudIcon Icon="@Icons.Custom.Brands.Instagram"/>Instagram</MudListItem>
+        <MudListItem Href="https://github.com/jpwiig" Target="_blank"><MudIcon Icon="@Icons.Custom.Brands.GitHub"/>GitHub</MudListItem>
+    </MudList>
+    <MudText> <a href="https://www.jpwiig.dev">Feel free to check out rest of this site!</a></MudText>
+    <MudText>Or: if you like mail you can send me a email at: <a href="Mailto:echo@jpwiig.dev">echo@jpwiig.dev</a></MudText>
+</MudPaper>
+
+@code {
+    
+}
