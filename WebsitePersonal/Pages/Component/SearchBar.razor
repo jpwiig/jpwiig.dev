@@ -5,6 +5,9 @@
     <MudCard>
         <MudText>Search for a spesific CVE</MudText>
         <MudTextField @bind-Value="Item" Label="search for item"/>
+        <MudSelect T="string">
+            <MudSelectItem T="string" Value="@(new string("hallo"))"/>
+        </MudSelect>
         <MudCardActions>
             <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick=" async () => await Search(Item)">Search</MudButton>
             <!--todo: filters -->
@@ -30,7 +33,7 @@
     public async Task Search(string search)
     {
         string todayinAmerican = today.ToString(timeFormat);
-        var hundrethirtydays = today.Add(new TimeSpan(90, 0, 0, 0));
+        var hundrethirtydays = today.Add(new TimeSpan(120, 0, 0, 0));
         string hnrdthirtydaysagoformatted = hundrethirtydays.ToString(timeFormat);
         string url = $"https://services.nvd.nist.gov/rest/json/cves/2.0/?resultsPerPage=25&pubStartDate={todayinAmerican}&pubEndDate={hnrdthirtydaysagoformatted}&keywordSearch={search}";
         var req = new HttpRequestMessage(HttpMethod.Get, url);
@@ -62,5 +65,19 @@
         {
             err = true;
         }
+    }
+
+    public async Task Filter(string[]filters)
+    {
+        List<Vulnerability> newVuln = new List<Vulnerability>();
+        if (filters == null)
+        {
+            return;
+        }
+    }
+
+    public async Task NoOfDays()
+    {
+        
     }
 }

@@ -49,6 +49,10 @@
                                 <b>Description: </b>
                             </MudText>@feed.Cve.Descriptions.First().Value
                         </MudText>
+                        <MudText>
+                            <MudText><b>Status: </b></MudText>
+                            @feed.Cve.VulnStatus
+                        </MudText>
                     </MudPaper>
                 </MudListItem>
             }
