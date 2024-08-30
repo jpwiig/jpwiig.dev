@@ -7,11 +7,12 @@
         Why blazor and web assembly?
     </MudText>
     <MudSpacer/>
-    <MudText>When i started this project i wanted to have a new way to learn a new way to develop for the web.I have liked the idea of Webassembly, so i decided that this was the perfect opportunity to learn it, so here we are. I have already tried to use a bit razor pages and C# (and really liked it), so this seems like the next step. This page is meant for me to have some fun!</MudText>
+    <MudText>When i started this project i wanted to have a new way to learn a new way to develop for the web.I have liked the idea of Webassembly, so i decided that this was the perfect opportunity to learn it, so here we are. I have already tried to use a bit razor pages and C# (and really liked it), so this seems like the next step. This page is meant for me to have some fun!
+        I cloud have used differnt kinds of languages, like javascript and typescript. Sometimes is important to just be a bit different. A Website made with some fancy pants framework is all good and fun, but i feel like it can be a bit repetitve and a bit the same. Sometimes it gives a "youtube torturial" vibes. I have nothing against it, but it is simply not my style. </MudText>
 </MudPaper>
 <MudPaper>
     <MudText Typo="Typo.h2">
-        The nerdy things
+        Some kind of discussion about performance??
     </MudText>
     <MudText Typo="Typo.body1">
         One of the biggest drawback of web assembly is that is somewhat slow, so i will continuously try to optimize this website as i see fit, under you can see what i have done:
@@ -21,31 +22,35 @@
         <MudListItem>Trying to remove unused CSS where possible (as removing entire libraries that are not in use, why was bootstrap here??)</MudListItem>
         <MudListItem>Optimize Items</MudListItem>
     </MudList>
-    <MudText>As of most places have ok - connection, then mostly for the user experience, and it is actually kinda fun</MudText>
+    <MudText>As of most places have ok - connection, i think it is a ok solution. and who doesnt have som kind of cache in the website anyways.</MudText>
 </MudPaper>
 <MudPaper Elevation="0" Square="true">
     <MudText Typo="Typo.h2">
         Deploying in many ways.
     </MudText>
-    <MudText Typo="Typo.body1">As webassembly compiles to a static website in this context, i could have used many different ways to deploy the initial static website, so i decided to use Cloudflare pages, but as long as it can use a build script i should be good! But i like to have things in one place</MudText>
+    <MudText Typo="Typo.body1">As webassembly compiles to a static website in this context, i could have used many different ways to deploy the initial static website, so i decided to use Cloudflare pages, but as long as it can use a build script i should be good! But i like to have things in one place. This is the place where i have my domain, my mail forwarding thing. And of course there is a lot of different benefits to have your website inside the cloudflare network. With things like DDOS protection, extremly good security and all the other spice is of course really nice!</MudText>
 </MudPaper>
 <MudPaper>
     <MudText Typo="Typo.h2">The gigantic JSON object</MudText>
     <MudText Typo="Typo.body1">
-        The last couple of weeks i have been fighting with a huge <abbr title="Javascript Object Notation">json</abbr> object. The object i am talking about is of course the live CVE feed that are under the <a href="/cybersec">cybersecurity</a> tab. The first challenge was to map this to a excisting <abbr title="Data Transfer Object">DTO</abbr>. This would be essential for me to load the object as i wanted.
+        for a couple of weeks i have been fighting with a huge <abbr title="Javascript Object Notation">json</abbr> object. The object i am talking about is of course the live CVE feed that are under the <a href="/cybersec">cybersecurity</a> tab. The first challenge was to map this to a excisting <abbr title="Data Transfer Object">DTO</abbr>. This would be essential for me to load the object as i wanted. The next steps is to figure out how i could use the same search for the same index every single time, and of course to map the different filters for all the different kinds of search. 
     </MudText>
     <MudText Typo="Typo.h3">Breakdown of the json object</MudText>
-    <MudText>Luckly for me we live in a modern time, with modern solutions, so of course i used some modern tools. First the provider of the API that i used, <abbr title="National Institution of Technology">NIST</abbr> provided a pretty neat schema of the data, so a combination of that, and use of <a href="https://hoppscotch.io/">hoppscotch</a>, to generate and get a closer look at the code helped me a lot, so big up to them!</MudText>
+    <MudText>Luckly for me we live in a modern time, with modern solutions, so of course i used some modern tools. First the provider of the API that i used, <abbr title="National Institution of Technology">NIST</abbr> provided a pretty neat schema of the data, so a combination of that, and use of <a href="https://hoppscotch.io/">hoppscotch</a>, to generate and get a closer look at the code helped me a lot, so big up to them! This is also a really great alternative to Postman. You also do not need to download extra software ever, so that is really nice, and i can enjoy that!</MudText>
     <MudText>The Object mainly consists of:</MudText>
     <MudList T="string">
-       <MudListItem> ResultPerPage: This you can use to define how many of a object you want to get</MudListItem>
-       <MudListItem> StartIndex: Which index you are getting the results from (0 is the first page of the params you decide)</MudListItem>
-       <MudListItem> TotalResults: says how many CVE you are getting</MudListItem>
-       <MudListItem> Format: what format the CVE is</MudListItem>
-       <MudListItem> Version: Wich CVE version it is</MudListItem>
-       <MudListItem> TimeStamp: when the data is from</MudListItem>
-       <MudListItem> Vulnarbilities[]: The Feed itself</MudListItem>
+        <MudListItem> ResultPerPage: This you can use to define how many of a object you want to get</MudListItem>
+        <MudListItem> StartIndex: Which index you are getting the results from (0 is the first page of the params you decide)</MudListItem>
+        <MudListItem> TotalResults: says how many CVE you are getting</MudListItem>
+        <MudListItem> Format: what format the CVE is</MudListItem>
+        <MudListItem> Version: Wich CVE version it is</MudListItem>
+        <MudListItem> TimeStamp: when the data is from</MudListItem>
+        <MudListItem> Vulnarbilities[]: The Feed itself</MudListItem>
     </MudList>
+</MudPaper>
+<MudPaper>
+    <MudText Typo="Typo.h2">What's next?</MudText>
+    <MudText Typo="Typo.body1">To be honset, i am not sure yet. <a href="https://github.com/dylanaraps">I might go farming</a>. Right now i am certain that i need to focus becoming the best cybersecurity professional. At least that is the plan, but plans can change, always. Either ways, i always hope that you can enjoy looking at my website, and it is at least somewhat interesting</MudText>
 </MudPaper>
 <MudAlert Severity="Severity.Info">
     If you see anything on this site, please open a Issue in the
