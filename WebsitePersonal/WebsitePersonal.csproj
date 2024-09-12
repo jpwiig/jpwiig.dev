@@ -3,7 +3,6 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
 	<Nullable>enable</Nullable>
-	<RunAOTCompilation>true</RunAOTCompilation>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>BlazorApp1</RootNamespace>
       <UserSecretsId>4b87fc59-dc0c-41a9-ad3e-818f3b02796a</UserSecretsId>
