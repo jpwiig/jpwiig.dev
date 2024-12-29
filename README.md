@@ -21,4 +21,4 @@ run the ```build.sh``` file in the root of the solution, then you should be good
 - intergration with apis that are useful to cybersecurity (CVE feed)
  - Maybe some other cybersec features? 
 - Labs page that will showcase me playing with other technologies (webGL when??), this does not nessitary needs to be cybersecurity related.
-- Everything else that i can possibily need
+- Everything else that i can possibily need!
