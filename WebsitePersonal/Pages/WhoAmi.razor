@@ -38,13 +38,21 @@
             <MudListItem>Have way to much fun</MudListItem>
         </MudList>
     </MudItem>
-    <MudItem>
-        <!-- Ways to reach out!-->
-        <MudText Typo="Typo.body2">Any questions? Reach out!</MudText>
-        <MudText Typo="Typo.body2"><a href="mailto:echo@jpwiig.dev">echo@jpwiig.dev</a></MudText>
+    <MudItem xs="6">
+        <!-- Bagdes and fun-->
+        <MudText Typo="Typo.h4">Bagdes from different places</MudText>
+        <!-- from: https://github.com/Maritims/norsk-programmering-badge -->
+        <norsk-programmering-badge></norsk-programmering-badge>
     </MudItem>
-    
+   
+    <script src="js/norsk-programmering-badge.js"></script>
 </MudGrid>
+<MudItem xs="6">
+    <!-- Ways to reach out!-->
+    <MudText Typo="Typo.body2">Any questions? Reach out!</MudText>
+    <MudText Typo="Typo.body2"><a href="mailto:echo@jpwiig.dev">echo@jpwiig.dev</a></MudText>
+
+</MudItem>
 @code {
     //todo: whoami animation, terminal inspired
     //todo Maps and shit

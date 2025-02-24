@@ -9,7 +9,10 @@ html, body {
 a, .btn-link {
     color: #006bb7;
 }
-
+@font-face {
+    font-family: 'Silkscreen';
+    source: url('fonts/slkscr.ttf');
+}
 /*Animations for the typewriteeffent*/
 @keyframes typing {
     from {max-width: 0}
