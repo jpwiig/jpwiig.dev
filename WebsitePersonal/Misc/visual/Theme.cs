@@ -31,7 +31,7 @@ public class Theme
                 {
                     FontFamily = new[]
                     {
-                      "Roboto","Poppins", "Silkscreen","Sans Serif"
+                        "Roboto","Poppins","Sans Serif"
                     },
                     
                 }

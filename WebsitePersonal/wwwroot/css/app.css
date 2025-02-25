@@ -12,8 +12,8 @@ a, .btn-link {
 }
 /*font for the NP bagde*/
 @font-face {
-    font-family: 'Silkscreen';
-    source: url('fonts/slkscr.ttf');
+    font-family: "Silkscreen";
+    src: url("fonts/slkscr.ttf");
 }
 /*Animations for the typewriteeffent*/
 @keyframes typing {
