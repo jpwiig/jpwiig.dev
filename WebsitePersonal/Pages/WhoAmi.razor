@@ -3,8 +3,8 @@
 
 <MudPaper MaxWidth="225px"><MudText Typo="Typo.h3" class="intro">$ whoami</MudText></MudPaper>
 
-<MudGrid Justify="Justify.FlexStart" Spacing="2">
-    <MudItem xs="6">
+<MudGrid Justify="Justify.FlexStart" Spacing="3">
+    <MudItem xs="4">
         <!-- epic qoute!--> 
         <MudPaper Elevation="0" Square="true">
             <MudText Typo="Typo.h4">A place a little south, and some west of Oslo</MudText>
@@ -13,23 +13,31 @@
             <MudText Typo="Typo.body1">There was a guy, me! My name is Jon Petter Wiig (call me Jon Petter or Petter, NOT only Jon). I am a 23 years old fullstack developer that enjoys a new challenge everywhere. I like to say that i am as versatile as the potato. I can do almost everything with enough time and resources. I like to work out, engage in voluntary work. To interact with both professional in the IT field, and to learn even more about development and other adventures about the IT world. I can also be found at places like hackeriet or at OsloMet from time to time</MudText>
         </MudPaper>
     </MudItem>  
-    <MudItem xs="6">
+    <MudItem xs="4">
         <!-- a image of me !-->
         <MudImage Src="/pictures/profilproff-cropped.jpeg" Alt="Picture of me during standing by a poster" Class="rounded-lg" Width="400" />
         
     </MudItem>
-    <MudItem xs="6">
-        <!-- quick info about me !-->
-        <MudText Typo="Typo.h4">Some fun facts</MudText>
+
+    <MudItem xs="4">
+        <!-- Bagdes and fun-->
+        <MudText Typo="Typo.h4">Bagdes from different places</MudText>
+        <!-- from: https://github.com/Maritims/norsk-programmering-badge -->
+        <norsk-programmering-badge></norsk-programmering-badge>
+    </MudItem>
+    <MudItem xs="4">
+        <!-- Links !-->
+        <MudText Typo="Typo.h4">Where you can find me: </MudText>
         <MudList T="string">
-            <MudListItem>I have ran an half marathon in two hours</MudListItem>
-            <MudListItem>I have been working as a teachers assistant for many years</MudListItem>
-            <MudListItem>I have climbed the third highest climbing wall in Norway</MudListItem>
-            <MudListItem>I got multiple first blood (first one to solve it) on OsloCTF own CTF challenge</MudListItem>
-            <MudListItem>I am from the same place that the person who invented CSS is from</MudListItem>
+            <MudText>LinkedIn</MudText>
+            <MudText>GitHub</MudText>
+            <MudText>Instagram</MudText>
+            <MudText>Bluesky</MudText>
+            <MudText>Mastadon</MudText>
+            <MudText>Twitch</MudText>
         </MudList>
     </MudItem>
-    <MudItem xs="6">
+    <MudItem xs="4">
         <!-- what i want to do !-->
         <MudText Typo="Typo.h4">What i like to do more of</MudText>
         <MudList T="string">
@@ -38,21 +46,17 @@
             <MudListItem>Have way to much fun</MudListItem>
         </MudList>
     </MudItem>
-    <MudItem xs="6">
-        <!-- Bagdes and fun-->
-        <MudText Typo="Typo.h4">Bagdes from different places</MudText>
-        <!-- from: https://github.com/Maritims/norsk-programmering-badge -->
-        <norsk-programmering-badge></norsk-programmering-badge>
+    <MudItem xs="4">
+        <MudText Typo="Typo.h4"> sites</MudText>
     </MudItem>
-   
-    <script src="js/norsk-programmering-badge.js"></script>
 </MudGrid>
-<MudItem xs="6">
+<MudItem>
     <!-- Ways to reach out!-->
     <MudText Typo="Typo.body2">Any questions? Reach out!</MudText>
     <MudText Typo="Typo.body2"><a href="mailto:echo@jpwiig.dev">echo@jpwiig.dev</a></MudText>
 
 </MudItem>
+<script src="js/norsk-programmering-badge.js"></script>
 @code {
     //todo: whoami animation, terminal inspired
     //todo Maps and shit
