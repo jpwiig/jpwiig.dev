@@ -6,7 +6,9 @@ html, body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-
+.profile {
+    width: 600px;
+}
 a, .btn-link {
     color: #006bb7;
 }
@@ -74,4 +76,11 @@ h1:focus {
 
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
+}
+
+/*media queries*/
+@media only screen and (max-width: 600px){
+.profile {
+    width: 320px;
+}
 }
