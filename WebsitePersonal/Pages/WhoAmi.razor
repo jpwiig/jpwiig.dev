@@ -1,10 +1,11 @@
 ﻿@page "/whoami"
 
 
-<MudPaper MaxWidth="225px"><MudText Typo="Typo.h3" class="intro">$ whoami</MudText></MudPaper>
+<MudItem Class="pl-6"><MudPaper MaxWidth="225px"><MudText  Typo="Typo.h3" class="intro">$ whoami</MudText></MudPaper></MudItem>
 
-<MudGrid Justify="Justify.FlexStart" Spacing="6">
-    <!--4 1 3 4-->
+<MudGrid Justify="Justify.FlexStart" Class="pl-6 " Spacing="6">
+    <!--4 4 4-->
+    <!-- 12 -->
     <MudItem xs="12" lg="4" xl="4">
         <!-- epic qoute!-->
         <MudPaper Elevation="0" Square="true">
@@ -23,6 +24,7 @@
         <MudText Typo="Typo.h4">Bagdes from different places</MudText>
         <!-- from: https://github.com/Maritims/norsk-programmering-badge -->
         <norsk-programmering-badge></norsk-programmering-badge>
+        <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2508195" style='border:none;'></iframe>
     </MudItem>
     <MudItem xs="12" lg="4" xl="4">
         <!-- Links !-->
@@ -53,7 +55,7 @@
     <!-- Ways to reach out!-->
     <MudText Typo="Typo.body2">Any questions? Reach out!</MudText>
     <MudText Typo="Typo.body2"><a href="mailto:echo@jpwiig.dev">echo@jpwiig.dev</a></MudText>
-
+<!-- Class="pa-6"-->
 </MudItem>
 <script src="js/norsk-programmering-badge.js"></script>
 @code { private const string jpwiig = "@jpwiig";
