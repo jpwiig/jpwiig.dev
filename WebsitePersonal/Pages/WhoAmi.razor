@@ -24,6 +24,7 @@
         <MudText Typo="Typo.h4">Bagdes from different places</MudText>
         <!-- from: https://github.com/Maritims/norsk-programmering-badge -->
         <norsk-programmering-badge></norsk-programmering-badge>
+        <wiigen-bagde></wiigen-bagde>
         <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2508195" style='border:none;'></iframe>
     </MudItem>
     <MudItem xs="12" lg="4" xl="4">
@@ -48,7 +49,16 @@
         </MudList>
     </MudItem>
     <MudItem xs="12" lg="4" xl="4">
-        <MudText Typo="Typo.h4"> sites</MudText>
+        <MudText Typo="Typo.h4">cool sites by cool people:</MudText>
+        <MudList T="string">
+            <!-- Sites for dev people -->
+            <MudListItem T="string" href="https://discord.gg/norsk-programmering" Target="_blank">norwegian tech people discord server</MudListItem>
+            <MudListItem T="string" href="https://vegar.codes/" Target="_blank">vegar.codes</MudListItem>
+            <MudListItem T="string" href="https://frkfrontend.no/" Target="_blank">frkfrontend.no</MudListItem>
+            <MudListItem T="string" href="https://clueless.no/" Target="_blank">clueless.no</MudListItem>
+            <MudListItem T="string" href="https://www.arealalien.no/" Target="_blank">arealalien.com</MudListItem>
+            <MudListItem T="string" href="https://lanmine.no/" Target="_blank">lanmine.no</MudListItem>
+        </MudList>
     </MudItem>
 </MudGrid>
 <MudItem>
@@ -58,6 +68,7 @@
 <!-- Class="pa-6"-->
 </MudItem>
 <script src="js/norsk-programmering-badge.js"></script>
+<script src="js/wiigen.js"></script>
 @code { private const string jpwiig = "@jpwiig";
     //todo: whoami animation, terminal inspired
     //todo Maps and shit
